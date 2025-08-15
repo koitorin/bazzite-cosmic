@@ -19,18 +19,17 @@ modules:
         - fcitx5-hangul
         - kcm-fcitx5
 
-- type: default-flatpaks
-  configurations:
-    - scope: system
-      repo:
-        title: Flathub (system)
-      install: # system flatpaks we want all users to have and not remove
-        - dev.edfloreshz.CosmicTweaks
-        - best.ellie.StartupConfiguration
-        - dev.edfloreshz.Calculator
-        - io.github.pixeldoted.cosmic-ext-color-picker
-        - flathub dev.heppen.webapps
-        - com.jwestall.Forecast
+  - type: default-flatpaks
+    configurations:
+      - notify: true # Send notification after install/uninstall is finished
+        scope: system
+        install:
+          - dev.edfloreshz.CosmicTweaks
+          - best.ellie.StartupConfiguration
+          - dev.edfloreshz.Calculator
+          - io.github.pixeldoted.cosmic-ext-color-picker
+          - flathub dev.heppen.webapps
+          - com.jwestall.Forecast
 
   - type: systemd
     system:
