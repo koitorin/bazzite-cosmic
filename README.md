@@ -4,7 +4,7 @@ This is an experimental image built from Bazzite GNOME images, adding COSMIC DE 
 
 ### List of tweaks
 - Added Fcitix5 as workaround for Japonese, Korean, and Chinese input. ([Issue upstream](https://github.com/pop-os/cosmic-epoch/issues/104))
-- Added [adicional COSMIC applets](https://github.com/wiiznokes/cosmic-applets-unofficial-packaging).
+- Added [adicional COSMIC applets](https://copr.fedorainfracloud.org/coprs/wiiznokes/cosmic-applets-unofficial/).
 
 ## Rebase from bazzite-gnome* or any Silverblue based image (pick one of them)
 
