@@ -1,6 +1,6 @@
 # Bazzite COSMIC
 
-This is an experimental image built from Bazzite GNOME images, adding COSMIC DE from the [COPR](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/), COSMIC apps, and some small tweaks. As the COSMIC DE is install in developemnt, be aware that there are still constant bugs and missing features (e.g. night light).
+This is an experimental image built from Bazzite GNOME images, adding COSMIC DE from the [COPR](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/), COSMIC apps, and some small tweaks. As the COSMIC DE is still in alpha, be aware that there are still constant bugs and missing features (e.g. night light).
 
 ### List of tweaks
 - Added Fcitix5 as workaround for Japonese, Korean, and Chinese input. ([Issue upstream](https://github.com/pop-os/cosmic-epoch/issues/104))
