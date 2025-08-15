@@ -28,7 +28,7 @@ modules:
           - best.ellie.StartupConfiguration
           - dev.edfloreshz.Calculator
           - io.github.pixeldoted.cosmic-ext-color-picker
-          - flathub dev.heppen.webapps
+          - dev.heppen.webapps
           - com.jwestall.Forecast
 
   - type: systemd
