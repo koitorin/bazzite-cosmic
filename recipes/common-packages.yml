@@ -1,0 +1,27 @@
+modules:
+  - type: dnf
+    repos:
+      cleanup: true
+      copr:
+        - ryanabx/cosmic-epoch
+        - wiiznokes/cosmic-applets-unofficial
+    install:
+      packages:
+        - cosmic-desktop
+        - cosmic-edit
+        - cosmic-player
+        - cosmic-store
+        - cosmic-ext-applet-clipboard-manager
+        - cosmic-ext-applet-external-monitor-brightness
+        - fcitx5-configtool
+        - fcitx5-mozc
+        - fcitx5-chinese-addons
+        - fcitx5-hangul
+        - kcm-fcitx5
+
+  - type: systemd
+    system:
+      enabled:
+        - podman.socket
+
+  - type: signing
