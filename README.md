@@ -9,4 +9,3 @@ This is `bazzite-gnome-nvidia` image with Cosmic DE from the [COPR](https://copr
 **Rebase to the signed image**
 
 ```rpm-ostree rebase ostree-image-signed:docker://ghcr.io/koitorin/bazzite-cosmic-nvidia:latest```
-# bazzite-cosmic
