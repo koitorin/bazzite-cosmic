@@ -1,19 +1,28 @@
-# bazzite-cosmic-nvidia
+# Bazzite COSMIC
 
-This is Bazzite GNOME images with Cosmic DE from the [COPR](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/), COSMIC apps, and some small tweaks.
+This is an experimental image built from Bazzite GNOME images, adding COSMIC DE from the [COPR](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/), COSMIC apps, and some small tweaks. As the COSMIC DE is install in developemnt, be aware that there are still constant bugs and missing features (e.g. night light).
+
+### List of tweaks
+- Added Fcitix5 as workaround for Japonese, Korean, and Chinese input. ([Issue upstream](https://github.com/pop-os/cosmic-epoch/issues/104))
+- Added [adicional COSMIC applets](https://github.com/wiiznokes/cosmic-applets-unofficial-packaging).
 
 ## Rebase from bazzite-gnome* or any Silverblue based image (pick one of them)
 
+### AMD/Intel
 ```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-cosmic:latest
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-cosmic-nvidia:latest
+```
+### Nvidia Turing or later (RTX | GTX 16xx)
+```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-cosmic-nvidia-open:latest
 ```
-
-**Rebase to the signed image**
-
+### Nvidia Legacy (GTX 9xx-10xx)
 ```bash
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/koitorin/bazzite-cosmic:latest
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/koitorin/bazzite-cosmic-nvidia:latest
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/koitorin/bazzite-cosmic-nvidia-open:latest
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-cosmic-nvidia:latest
+```
+
+### Rebase to the signed image
+Swap `<image>` to the one you're using (bazzite-cosmic, bazzite-nvidia-open, or bazzite-nvidia).
+```bash
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/koitorin/<image>:latest
 ```
