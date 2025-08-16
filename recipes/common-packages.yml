@@ -11,8 +11,6 @@ modules:
         - cosmic-edit
         - cosmic-player
         - cosmic-store
-        - cosmic-ext-applet-clipboard-manager
-        - cosmic-ext-applet-external-monitor-brightness
         - fcitx5-configtool
         - fcitx5-mozc
         - fcitx5-chinese-addons
@@ -30,6 +28,15 @@ modules:
           - io.github.pixeldoted.cosmic-ext-color-picker
           - dev.heppen.webapps
           - com.jwestall.Forecast
+      - scope: system
+        repo: 
+          url: https://apt.pop-os.org/cosmic/cosmic.flatpakrepo
+          name: cosmic
+          title: COSMIC flatpaks
+        install: 
+          - co.uk.cappsy.CosmicAppletLogoMenu
+          - io.github.cosmic_utils.cosmic-ext-applet-clipboard-manager
+          - io.github.cosmic_utils.cosmic-ext-applet-external-monitor-brightness
 
   - type: systemd
     system:
