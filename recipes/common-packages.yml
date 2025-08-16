@@ -11,6 +11,7 @@ modules:
         - cosmic-edit
         - cosmic-player
         - cosmic-store
+        - cosmic-ext-applet-clipboard-manager
         - fcitx5-configtool
         - fcitx5-mozc
         - fcitx5-chinese-addons
@@ -35,7 +36,6 @@ modules:
           title: COSMIC flatpaks
         install: 
           - co.uk.cappsy.CosmicAppletLogoMenu
-          - io.github.cosmic_utils.cosmic-ext-applet-clipboard-manager
           - io.github.cosmic_utils.cosmic-ext-applet-external-monitor-brightness
 
   - type: systemd
