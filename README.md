@@ -5,7 +5,7 @@ This is an experimental image built from Bazzite GNOME images, adding COSMIC DE 
 ### List of tweaks
 - Added Fcitix5 as workaround for Japonese, Korean, and Chinese input. ([Issue upstream](https://github.com/pop-os/cosmic-epoch/issues/104))
 - Added [adicional COSMIC applets](https://copr.fedorainfracloud.org/coprs/wiiznokes/cosmic-applets-unofficial/).
-- Added [COSMIC flatpak repo](github.com/pop-os/cosmic-flatpak) by default, for apps that are not suitable for Flathub.
+- Added [COSMIC flatpak repo](https://github.com/pop-os/cosmic-flatpak) by default, for apps that are not suitable for Flathub.
 
 ## Rebase from bazzite-gnome* or any Silverblue based image (pick one of them)
 
