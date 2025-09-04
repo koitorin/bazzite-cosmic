@@ -13,3 +13,7 @@ image-version: stable
 # you can include multiple instances of the same module
 modules:
   - from-file: common-packages.yml
+  - type: dnf
+    install:
+      packages:
+        - freerdp
