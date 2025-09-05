@@ -25,6 +25,14 @@ rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-cosmic-nvi
 ```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-dx-cosmic:latest
 ```
+### Developer Experience version (RTX | GTX 16xx)
+```bash
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-dx-cosmic-nvidia-open:latest
+```
+### Developer Experience version (GTX 9xx-10xx; based on [this image](https://github.com/Lumaeris/bazzite-ldx-nvidia))
+```bash
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/koitorin/bazzite-dx-cosmic-nvidia:latest
+```
 
 ### Rebase to the signed image
 Swap `<image>` to the one you're using (bazzite-cosmic, bazzite-nvidia-open, or bazzite-nvidia).
