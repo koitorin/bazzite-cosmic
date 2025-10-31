@@ -1,0 +1,6 @@
+modules:
+  - type: dnf
+    install:
+      packages:
+        - freerdp
+        - uxplay
