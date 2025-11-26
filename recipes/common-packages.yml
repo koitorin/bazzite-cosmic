@@ -1,7 +1,7 @@
 modules:
   - type: script
     snippets:
-      - "echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ryanabx:cosmic-epoch.repo"
+      - "echo 'priority=1' | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ryanabx:cosmic-epoch.repo"
   
   - type: dnf
     repos:
