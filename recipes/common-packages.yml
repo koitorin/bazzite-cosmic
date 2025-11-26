@@ -1,4 +1,8 @@
 modules:
+  - type: script
+    snippets:
+      - "echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ryanabx:cosmic-epoch.repo"
+  
   - type: dnf
     repos:
       cleanup: true
@@ -7,35 +11,35 @@ modules:
         - wiiznokes/cosmic-applets-unofficial
     install:
       packages:
-        - repo: copr:copr.fedorainfracloud.org:ryanabx:cosmic-epoch
-          packages:
-           - cosmic-desktop
-           - cosmic-app-library
-           - cosmic-applets
-           - cosmic-bg
-           - cosmic-comp
-           - cosmic-edit
-           - cosmic-files
-           - cosmic-greeter
-           - cosmic-icon-theme
-           - cosmic-idle
-           - cosmic-initial-setup
-           - cosmic-launcher
-           - cosmic-notifications
-           - cosmic-osd
-           - cosmic-panel
-           - cosmic-player
-           - cosmic-randr
-           - cosmic-screenshot
-           - cosmic-session
-           - cosmic-settings
-           - cosmic-settings-daemon
-           - cosmic-store
-           - cosmic-term
-           - cosmic-wallpapers
-           - cosmic-workspaces
-           - pop-launcher
-           - xdg-desktop-portal-cosmic
+        - cosmic-desktop
+        - cosmic-app-library
+        - cosmic-applets
+        - cosmic-bg
+        - cosmic-comp
+        - cosmic-edit
+        - cosmic-files
+        - cosmic-greeter
+        - cosmic-icon-theme
+        - cosmic-idle
+        - cosmic-initial-setup
+        - cosmic-launcher
+        - cosmic-notifications
+        - cosmic-osd
+        - cosmic-panel
+        - cosmic-player
+        - cosmic-randr
+        - cosmic-screenshot
+        - cosmic-session
+        - cosmic-settings
+        - cosmic-settings-daemon
+        - cosmic-store
+        - cosmic-term
+        - cosmic-wallpapers
+        - cosmic-workspaces
+        - ibus-panel
+        - ibus-xinit
+        - pop-launcher
+        - xdg-desktop-portal-cosmic
         - cosmic-ext-applet-clipboard-manager
         - fcitx5-configtool
         - fcitx5-mozc
