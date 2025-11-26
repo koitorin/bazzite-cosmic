@@ -1,13 +1,13 @@
 modules:
   - type: script
     snippets:
+      - "dnf5 copr enable ryanabx/cosmic-epoch"
       - "echo 'priority=1' | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ryanabx:cosmic-epoch.repo"
   
   - type: dnf
     repos:
       cleanup: true
       copr:
-        - ryanabx/cosmic-epoch
         - wiiznokes/cosmic-applets-unofficial
     install:
       packages:
