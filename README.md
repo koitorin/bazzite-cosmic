@@ -1,4 +1,4 @@
-# Bazzite COSMIC
+# Bazzite COSMIC &nbsp; [![bluebuild build badge](https://github.com/koitorin/bazzite-cosmic/actions/workflows/build.yml/badge.svg)](https://github.com/koitorin/bazzite-cosmic/actions/workflows/build.yml)
 
 This is an experimental image built from Bazzite GNOME images, adding COSMIC DE from the [COPR](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/), COSMIC apps, and some small tweaks. As the COSMIC DE is still in alpha, be aware that there are still constant bugs and missing features (e.g. night light).
 
