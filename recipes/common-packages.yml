@@ -40,6 +40,7 @@ modules:
         - fcitx5-configtool
         - fcitx5-mozc
         - fcitx5-chinese-addons
+        - fcitx5-gtk
         - fcitx5-hangul
         - kcm-fcitx5
         - cutecosmic-qt6
