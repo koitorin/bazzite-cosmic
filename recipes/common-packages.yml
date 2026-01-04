@@ -36,7 +36,6 @@ modules:
         - ibus-xinit
         - pop-launcher
         - xdg-desktop-portal-cosmic
-        - cosmic-ext-applet-clipboard-manager
         - fcitx5-configtool
         - fcitx5-mozc
         - fcitx5-chinese-addons
@@ -44,6 +43,9 @@ modules:
         - fcitx5-hangul
         - kcm-fcitx5
         - cutecosmic-qt6
+        - repo: copr:copr.fedorainfracloud.org:kordus:cosmic-applets
+          packages:
+            - cosmic-ext-applet-clipboard-manager
 
   - type: default-flatpaks
     configurations:
