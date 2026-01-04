@@ -5,6 +5,7 @@ modules:
       copr:
         - ryanabx/cosmic-epoch
         - wiiznokes/cosmic-applets-unofficial
+        - kordus/cosmic-applets
     install:
       packages:
         - cosmic-desktop
