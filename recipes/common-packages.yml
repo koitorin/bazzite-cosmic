@@ -48,6 +48,13 @@ modules:
           packages:
             - cosmic-ext-applet-clipboard-manager
 
+  # copying system files over to the system
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished
