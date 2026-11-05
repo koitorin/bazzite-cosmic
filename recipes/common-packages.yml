@@ -37,12 +37,12 @@ modules:
         - ibus-xinit
         - pop-launcher
         - xdg-desktop-portal-cosmic
-        - fcitx5-configtool
-        - fcitx5-mozc
-        - fcitx5-chinese-addons
-        - fcitx5-gtk
-        - fcitx5-hangul
-        - kcm-fcitx5
+        #- fcitx5-configtool
+        #- fcitx5-mozc
+        #- fcitx5-chinese-addons
+        #- fcitx5-gtk
+        #- fcitx5-hangul
+        #- kcm-fcitx5
         - cutecosmic-qt6
         - repo: copr:copr.fedorainfracloud.org:kordus:cosmic-applets
           packages:
