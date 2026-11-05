@@ -3,19 +3,57 @@ modules:
     repos:
       cleanup: true
       copr:
+        - ryanabx/cosmic-epoch
         - wiiznokes/cosmic-applets-unofficial
-    group-install:
-      with-optional: false
-      packages:
-        - @cosmic-desktop-environment    
+        - kordus/cosmic-applets
     install:
       packages:
-        - cosmic-ext-applet-clipboard-manager
+        - cosmic-desktop
+        - cosmic-app-library
+        - cosmic-applets
+        - cosmic-bg
+        - cosmic-comp
+        - cosmic-edit
+        - cosmic-files
+        - cosmic-greeter
+        - cosmic-icon-theme
+        - cosmic-idle
+        - cosmic-initial-setup
+        - cosmic-launcher
+        - cosmic-notifications
+        - cosmic-osd
+        - cosmic-panel
+        - cosmic-player
+        - cosmic-randr
+        - cosmic-screenshot
+        - cosmic-session
+        - cosmic-settings
+        - cosmic-settings-daemon
+        - cosmic-store
+        - cosmic-term
+        - cosmic-wallpapers
+        - cosmic-workspaces
+        - ibus-panel
+        - ibus-xinit
+        - pop-launcher
+        - xdg-desktop-portal-cosmic
         - fcitx5-configtool
         - fcitx5-mozc
         - fcitx5-chinese-addons
+        - fcitx5-gtk
         - fcitx5-hangul
-        - kcm-fcitx5  
+        - kcm-fcitx5
+        - cutecosmic-qt6
+        - repo: copr:copr.fedorainfracloud.org:kordus:cosmic-applets
+          packages:
+            - cosmic-ext-applet-clipboard-manager
+
+  # copying system files over to the system
+  - type: files
+    files:
+      - source: system
+        destination: /
+
 
   - type: default-flatpaks
     configurations:
@@ -40,6 +78,6 @@ modules:
   - type: systemd
     system:
       enabled:
-        - podman.socket
+        - cosmic-greeter
 
   - type: signing
