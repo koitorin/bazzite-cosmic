@@ -1,4 +1,4 @@
-name: Build Custom Image
+name: Check Bazzite updates & Build Bazzite COSMIC
 on:
   schedule:
     - cron: '00 09 * * *'  # Check daily at 09:00 UTC
@@ -61,7 +61,7 @@ jobs:
           fi
 
       # the build is fully handled by the reusable github action
-      - name: Build Bazzite COSMIC
+      - name: Build Images
         if: env.skip_build != 'true'
         uses: blue-build/github-action@v1.13
         with:
