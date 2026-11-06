@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   bluebuild:
-    name: Check Bazzite updates & Build Bazzite COSMIC
+    name: Build
     runs-on: ubuntu-latest
     permissions:
       contents: read
