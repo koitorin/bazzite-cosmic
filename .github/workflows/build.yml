@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Bazzite GNOME update check
         id: check_upstream
-        #if: github.event_name == 'schedule'
+        if: github.event_name == 'schedule'
         run: |
           if [ "$(date +%u)" -eq 1 ]; then
             echo "Today is the scheduled weekly forced build. Proceeding with build."
@@ -44,7 +44,7 @@ jobs:
           
           UPSTREAM_TIME=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:stable | jq -r '.Created')
           
-          DOWNSTREAM_TIME="2020-01-01T00:00:00Z"
+          DOWNSTREAM_TIME=$(skopeo inspect docker://ghcr.io/${{ github.repository_owner }}/bazzite-cosmic:latest | jq -r '.Created' 2>/dev/null || echo "1970-01-01T00:00:00Z")
           
           UPSTREAM_EPOCH=$(date -d "$UPSTREAM_TIME" +%s)
           DOWNSTREAM_EPOCH=$(date -d "$DOWNSTREAM_TIME" +%s)
