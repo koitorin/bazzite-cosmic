@@ -36,6 +36,12 @@ jobs:
         id: check_upstream
         if: github.event_name == 'schedule'
         run: |
+          if [ "$(date +%u)" -eq 1 ]; then
+            echo "Today is the scheduled weekly forced build. Proceeding with build."
+            echo "skip_build=false" >> $GITHUB_ENV
+            exit 0
+          fi
+          
           UPSTREAM_DIGEST=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:stable | jq -r '.Digest')
           
           DOWNSTREAM_DIGEST=$(skopeo inspect docker://ghcr.io/${{ github.repository_owner }}/bazzite-cosmic:latest | jq -r '.Digest' || echo "none")
@@ -49,7 +55,7 @@ jobs:
           fi
 
       # the build is fully handled by the reusable github action
-      - name: Bazzite COSMIC
+      - name: Build Bazzite COSMIC
         if: env.skip_build != 'true'
         uses: blue-build/github-action@v1.13
         with:
