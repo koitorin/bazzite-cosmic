@@ -42,16 +42,22 @@ jobs:
             exit 0
           fi
           
-          UPSTREAM_DIGEST=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:stable | jq -r '.Digest')
+          UPSTREAM_TIME=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:stable | jq -r '.Created')
           
-          DOWNSTREAM_DIGEST=$(skopeo inspect docker://ghcr.io/${{ github.repository_owner }}/bazzite-cosmic:latest | jq -r '.Digest' || echo "none")
+          DOWNSTREAM_TIME=$(skopeo inspect docker://ghcr.io/${{ github.repository_owner }}/bazzite-cosmic:latest | jq -r '.Created' 2>/dev/null || echo "1970-01-01T00:00:00Z")
           
-          if [ "$UPSTREAM_DIGEST" == "$DOWNSTREAM_DIGEST" ]; then
-            echo "Upstream Bazzite has not changed. Skipping build."
-            echo "skip_build=true" >> $GITHUB_ENV
-          else
-            echo "Upstream Bazzite has a new stable build. Proceeding with build."
+          UPSTREAM_EPOCH=$(date -d "$UPSTREAM_TIME" +%s)
+          DOWNSTREAM_EPOCH=$(date -d "$DOWNSTREAM_TIME" +%s)
+          
+          echo "Latest bazzite-gnome:stable built at: $UPSTREAM_TIME ($UPSTREAM_EPOCH)"
+          echo "Latest bazzite-cosmic:latest built at: $DOWNSTREAM_TIME ($DOWNSTREAM_EPOCH)"
+
+          if [ "$UPSTREAM_EPOCH" -gt "$DOWNSTREAM_EPOCH" ]; then
+            echo "Upstream Bazzite GNOME is newer. Proceeding with build."
             echo "skip_build=false" >> $GITHUB_ENV
+          else
+            echo "Bazzite COSMIC is already up to date with upstream. Skipping build."
+            echo "skip_build=true" >> $GITHUB_ENV
           fi
 
       # the build is fully handled by the reusable github action
