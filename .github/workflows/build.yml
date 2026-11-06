@@ -1,7 +1,7 @@
 name: Build Custom Image
 on:
   schedule:
-    - cron: '00 06 * * 1'  # 10:05am UTC everyday
+    - cron: '00 09 * * *'  # Check daily at 09:00 UTC
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
@@ -32,8 +32,25 @@ jobs:
           - recipe-dx-nvidia.yml
           - recipe-dx-nvidia-open.yml
     steps:
+      - name: Bazzite GNOME update check
+        id: check_upstream
+        if: github.event_name == 'schedule'
+        run: |
+          UPSTREAM_DIGEST=$(skopeo inspect docker://ghcr.io/ublue-os/bazzite-gnome:stable | jq -r '.Digest')
+          
+          DOWNSTREAM_DIGEST=$(skopeo inspect docker://ghcr.io/${{ github.repository_owner }}/bazzite-cosmic:latest | jq -r '.Digest' || echo "none")
+          
+          if [ "$UPSTREAM_DIGEST" == "$DOWNSTREAM_DIGEST" ]; then
+            echo "Upstream Bazzite has not changed. Skipping build."
+            echo "skip_build=true" >> $GITHUB_ENV
+          else
+            echo "Upstream Bazzite has a new stable build. Proceeding with build."
+            echo "skip_build=false" >> $GITHUB_ENV
+          fi
+
       # the build is fully handled by the reusable github action
-      - name: Build Custom Image
+      - name: Bazzite COSMIC
+        if: env.skip_build != 'true'
         uses: blue-build/github-action@v1.13
         with:
           recipe: ${{ matrix.recipe }}
