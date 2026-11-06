@@ -1,11 +1,11 @@
 # Bazzite COSMIC &nbsp; [![bluebuild build badge](https://github.com/koitorin/bazzite-cosmic/actions/workflows/build.yml/badge.svg)](https://github.com/koitorin/bazzite-cosmic/actions/workflows/build.yml)
 
-This is an experimental image built from Bazzite GNOME images, adding COSMIC DE from the [COPR](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/), COSMIC apps, and some small tweaks. As the COSMIC DE is still in alpha, be aware that there are still constant bugs and missing features (e.g. night light).
+This is an experimental image built from Bazzite GNOME images, adding COSMIC DE from the Fedora's official repos, COSMIC apps, and some small tweaks. As the COSMIC DE is still in alpha, be aware that there are still constant bugs and missing features (e.g. night light).
 
 ### List of tweaks
-- Added Fcitix5 as workaround for Japanese, Korean, and Chinese input. ([Issue upstream](https://github.com/pop-os/cosmic-epoch/issues/104))
-- Added [adicional COSMIC applets](https://copr.fedorainfracloud.org/coprs/wiiznokes/cosmic-applets-unofficial/).
+- ~~Added Fcitix5 as workaround for Japanese, Korean, and Chinese input.~~ Can now be added optionally as flatpak. (`flatpak install flathub Fcitx5` or using Bazaar / COSMIC app store) ([Issue upstream](https://github.com/pop-os/cosmic-epoch/issues/104))
 - Added [COSMIC flatpak repo](https://github.com/pop-os/cosmic-flatpak) by default, for apps that are not suitable for Flathub.
+- ~~Added [adicional COSMIC applets](https://copr.fedorainfracloud.org/coprs/wiiznokes/cosmic-applets-unofficial/).~~ Fully moved to the above
 
 ## Rebase from bazzite-gnome* or any Silverblue based image (pick one of them)
 
