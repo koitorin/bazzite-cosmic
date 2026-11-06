@@ -69,8 +69,9 @@ jobs:
           cosign_private_key: ${{ secrets.SIGNING_SECRET }}
           registry_token: ${{ github.token }}
           pr_event_number: ${{ github.event.number }}
+          # disable chunkah if it breaks something
+          chunkah: true
+          cli_version: v0.9.41
 
           # enabled by default, disable if your image is small and you want faster builds
           maximize_build_space: true
-          # disable if it breaks something
-          chunkah: true
