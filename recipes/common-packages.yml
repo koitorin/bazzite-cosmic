@@ -2,10 +2,6 @@ modules:
   - type: dnf
     repos:
       cleanup: true
-      copr:
-        - ryanabx/cosmic-epoch
-        - wiiznokes/cosmic-applets-unofficial
-        - kordus/cosmic-applets
     install:
       packages:
         - cosmic-desktop
