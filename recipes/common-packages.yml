@@ -38,9 +38,6 @@ modules:
         - pop-launcher
         - xdg-desktop-portal-cosmic
         - cutecosmic-qt6
-        - repo: copr:copr.fedorainfracloud.org:kordus:cosmic-applets
-          packages:
-            - cosmic-ext-applet-clipboard-manager
 
   # copying system files over to the system
   - type: files
@@ -66,6 +63,7 @@ modules:
           name: cosmic
           title: COSMIC flatpaks
         install: 
+          - io.github.cosmic_utils.cosmic-ext-applet-clipboard-manager
           - co.uk.cappsy.CosmicAppletLogoMenu
           - io.github.cosmic_utils.cosmic-ext-applet-external-monitor-brightness
 
