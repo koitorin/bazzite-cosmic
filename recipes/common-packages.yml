@@ -4,11 +4,11 @@ modules:
       cleanup: true
     install:
       packages:
-        - cosmic-desktop
         - cosmic-app-library
         - cosmic-applets
         - cosmic-bg
         - cosmic-comp
+        - cosmic-config-fedora
         - cosmic-edit
         - cosmic-files
         - cosmic-greeter
@@ -16,8 +16,10 @@ modules:
         - cosmic-idle
         - cosmic-initial-setup
         - cosmic-launcher
+        - cosmic-monitor
         - cosmic-notifications
         - cosmic-osd
+        - cosmic-osk
         - cosmic-panel
         - cosmic-player
         - cosmic-randr
