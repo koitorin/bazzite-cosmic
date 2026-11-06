@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Bazzite GNOME update check
         id: check_upstream
-        if: github.event_name == 'schedule'
+        #if: github.event_name == 'schedule'
         run: |
           if [ "$(date +%u)" -eq 1 ]; then
             echo "Today is the scheduled weekly forced build. Proceeding with build."
